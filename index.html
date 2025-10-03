@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeeshan | Canvas Portfolio</title>
+  <meta name="description" content="Portfolio of Zeeshan - Showcasing creative projects mixing art, AI, and code.">
+  <style>
+    /* === Custom JapaneseN Font === */
+    @font-face {
+      font-family: 'JapaneseN';
+      src: url('fonts/JapaneseN.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* === Global Styles === */
+    body {
+      font-family: 'JapaneseN', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #0a192f;
+      color: #e0def4;
+    }
+
+    /* === Header === */
+    header {
+      background: linear-gradient(135deg, #1f4f82, #7e5a9b);
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 3px solid #f4a261;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: #00aaff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #00aaff, 0 0 25px #0077cc;
+    }
+
+    /* === Navigation === */
+    nav {
+      background: #112240;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #f6bd60;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f4a261;
+      text-shadow: 0 0 8px #f4a261;
+    }
+
+    /* === Sections === */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(145deg, #1f4f82, #0a192f);
+    }
+
+    section:nth-child(odd) {
+      background: linear-gradient(145deg, #7e5a9b, #112240);
+    }
+
+    h2 {
+      color: #00aaff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #7e5a9b;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      text-shadow: 0 0 8px #00aaff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #e0f7ff;
+    }
+
+    /* === Projects === */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background: #112240;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 4px solid #7e5a9b;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+
+    .project h3 {
+      color: #f4a261;
+      margin-top: 0;
+      text-shadow: 0 0 6px #f4a261;
+    }
+
+    /* === Custom Upload Button === */
+    .custom-upload {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #112240;
+      color: #00aaff;
+      border: 2px solid #00aaff;
+      border-radius: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,170,255,0.6);
+    }
+
+    .custom-upload:hover {
+      background: #00aaff;
+      color: #ffffff;
+      box-shadow: 0 0 20px #00aaff, 0 0 40px #0077cc;
+      transform: scale(1.05);
+    }
+
+    #file-name {
+      margin-left: 1rem;
+      color: #f6bd60;
+      font-style: italic;
+    }
+
+    /* === Social Icons === */
+    .socials {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .socials a {
+      color: #f6bd60;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00aaff;
+      text-shadow: 0 0 8px #00aaff;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #112240;
+      color: #8892b0;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      border-top: 2px solid #7e5a9b;
+    }
+
+    /* === Mobile Fixes === */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+  <!-- FontAwesome for icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- === HEADER === -->
+  <header>
+    <h1>Canvas</h1>
+  </header>
+
+  <!-- === NAVIGATION === -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- === ABOUT SECTION === -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! 👋 I’m <b>Zeeshan</b>, a passionate learner exploring code, AI, and design.  
+      I love turning ideas into creative digital experiences, whether it’s coding projects or visual experiments.  
+    </p>
+    <p>
+      My dream is to study AI abroad (Germany/Japan), build innovative tools, and inspire people by mixing art with technology.  
+      This portfolio showcases my journey 🚀.
+    </p>
+  </section>
+
+  <!-- === PROJECTS SECTION === -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Image Outline Tool</h3>
+        <p>Upload an image and view its edge-detection outline.</p>
+        
+        <!-- File Upload + Canvas -->
+        <label for="upload" class="custom-upload">Upload Image</label>
+        <input type="file" id="upload" accept="image/*" hidden>
+        <span id="file-name">No file chosen</span>
+        <br><br>
+        <canvas id="canvas" style="max-width:100%; border:1px solid #00aaff;"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- === CONTACT SECTION === -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:zeeshanut911@gmail.com" style="color:#f6bd60;">zeeshanut911@gmail.com</a></p>
+    <p>Let’s connect! ↓</p>
+ <div class="socials">
+  <a href="https://github.com/z33-17" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://instagram.com/z33__17" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="mailto:zeeshanut911@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <p>© 2025 Zeeshan | Built with 💻 + ❤️</p>
+  </footer>
+
+  <!-- === IMAGE OUTLINE SCRIPT === -->
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const fileInput = document.getElementById("upload");
+    const fileNameSpan = document.getElementById("file-name");
+
+    fileInput.addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      fileNameSpan.textContent = file.name;
+
+      const img = new Image();
+      img.onload = () => {
+        // Resize large images for performance
+        const scale = Math.min(800 / img.width, 600 / img.height, 1);
+        const w = img.width * scale;
+        const h = img.height * scale;
+        canvas.width = w;
+        canvas.height = h;
+        ctx.drawImage(img, 0, 0, w, h);
+
+        const imgData = ctx.getImageData(0, 0, w, h);
+        const data = imgData.data;
+        const gray = new Uint8ClampedArray(w * h);
+
+        for (let i = 0; i < data.length; i += 4) {
+          gray[i/4] = (data[i] + data[i+1] + data[i+2]) / 3;
+        }
+
+        function getPixel(x,y) {
+          if (x<0 || y<0 || x>=w || y>=h) return 0;
+          return gray[y*w + x];
+        }
+
+        const output = ctx.createImageData(w, h);
+        for (let y=0; y<h; y++) {
+          for (let x=0; x<w; x++) {
+            const gx = -getPixel(x-1,y-1) -2*getPixel(x-1,y) -getPixel(x-1,y+1)
+                      +getPixel(x+1,y-1) +2*getPixel(x+1,y) +getPixel(x+1,y+1);
+            const gy = -getPixel(x-1,y-1) -2*getPixel(x,y-1) -getPixel(x+1,y-1)
+                      +getPixel(x-1,y+1) +2*getPixel(x,y+1) +getPixel(x+1,y+1);
+
+            const mag = Math.sqrt(gx*gx + gy*gy);
+            const v = mag > 100 ? 0 : 255;
+
+            const i = (y*w + x)*4;
+            output.data[i] = output.data[i+1] = output.data[i+2] = v;
+            output.data[i+3] = 255;
+          }
+        }
+        ctx.putImageData(output, 0, 0);
+      };
+
+      img.src = URL.createObjectURL(file);
+    });
+  </script>
+</body>
+</html>
